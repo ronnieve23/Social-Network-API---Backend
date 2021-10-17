@@ -3,8 +3,8 @@ const thoughtRoutes =  require('./thought-routes');
 const userRoutes = require('./user-routes');
 
 
-router.use('thought', thoughtRoutes);
-router.use('user', userRoutes)
+router.use('/thought', thoughtRoutes);
+router.use('/user', userRoutes);
 
 
 module.exports = router;
