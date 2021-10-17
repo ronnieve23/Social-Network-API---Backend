@@ -38,6 +38,11 @@ const userSchema = new Schema(
 );
 
 
+//virtual to retrieve friends array
+userSchema.virtual('friendsCount').get(function(){
+    return this.friends.length;
+});
+
 const User = model ('User', userSchema);
 
 module.exports = User;
