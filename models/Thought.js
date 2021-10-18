@@ -9,7 +9,7 @@ const thoughtSchema = new Schema(
             type: String,
             required: true,
             minlength: 1,
-            maxlength: 1
+            maxlength: 280
         },
         createdAt: {
             type: Date,
@@ -32,4 +32,4 @@ const thoughtSchema = new Schema(
 
 const Thought = model ('Thought', thoughtSchema);
 
-model.exports = Thought;
+module.exports = Thought;
