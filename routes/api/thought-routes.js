@@ -10,8 +10,7 @@ const {
 // Set up GET all and POST at /api/thought
 router
   .route('/')
-  .get(getAllThoughts);
-
+  .get(getAllThoughts)
   
 // POST /api/thoughts/:userId
 router
@@ -25,6 +24,7 @@ router
 .get(getThoughtById)
 .put(updateThought)
 .delete(deleteThought);
+
 
 
 module.exports = router;

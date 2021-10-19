@@ -59,13 +59,13 @@ const userController = {
     },
 
     //delete user by id and their thoughts <<(BONUS)
-    deleteUser({params}, res) {
-        User.findOneAndDelete({_id: params.id })
+    deleteUser(req, res) {
+        User.findOneAndDelete({_id: req.params.id })
         .then(dbUserData => {
             if (!dbUserData){
                 res.status(404).json({message: 'No user found with this id!'});
             }
-            Thought.deleteMany({_id:{$in: dbUserData.thoughts}});
+            return Thought.deleteMany({_id:{$in: dbUserData.thoughts}});
         })
         .then(()=>{
             res.json({mesage: 'User and their thoughts have been deleted!'});
